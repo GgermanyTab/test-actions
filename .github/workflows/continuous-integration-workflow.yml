@@ -12,6 +12,7 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
     steps:
+      - if: ${{ !startsWith(github.ref, 'refs/tags/') }}
       - uses: docker://agilepathway/pull-request-label-checker:latest
         with:
           one_of: major,minor,patch
