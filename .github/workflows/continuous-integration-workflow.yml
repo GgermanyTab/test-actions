@@ -31,10 +31,13 @@ jobs:
           minor_pattern: "feat:"
           format: "v${major}.${minor}.${patch}"
 
-      - uses: johnyherangi/create-release-notes@main
-        id: create-release-notes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create changelog text
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: changelog
+        uses: loopwerk/tag-changelog@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_types: other,doc,chore
 
       - name: Create Release
         if: ${{ github.ref == 'refs/heads/main' }}
