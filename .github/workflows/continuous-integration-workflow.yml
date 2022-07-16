@@ -20,6 +20,12 @@ jobs:
         with:
           fetch-depth: 0
 
+  auto_release:
+    name: Automatic release
+    needs: check_labels
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Semantic versioning
         if: ${{ github.ref == 'refs/heads/main' }}
         id: versioning
@@ -37,10 +43,9 @@ jobs:
         uses: loopwerk/tag-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          config_file: .github/tag-changelog-config.js
+          config_file: .github/changelog-config.js
 
       - name: Create Release
-        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
