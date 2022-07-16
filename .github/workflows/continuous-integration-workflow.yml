@@ -20,14 +20,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Populate changelog
-        if: ${{ github.ref == 'refs/heads/main' }}
-        id: generate_notes
-        uses: anmarkoulis/commitizen-changelog-reader@master
-        with:
-          tag_name: ${{ github.ref }}
-          changelog: CHANGELOG.md
-
       - name: Semantic versioning
         if: ${{ github.ref == 'refs/heads/main' }}
         id: versioning
@@ -48,4 +40,12 @@ jobs:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
           body: ${{join(fromJson(steps.generate_notes.outputs.notes).notes, '')}}
+
+      - name: Populate changelog
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: generate_notes
+        uses: anmarkoulis/commitizen-changelog-reader@master
+        with:
+          tag_name: ${{ steps.versioning.outputs.version }}
+          changelog: CHANGELOG.md
 
