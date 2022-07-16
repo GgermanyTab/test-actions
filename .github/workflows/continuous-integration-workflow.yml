@@ -12,6 +12,9 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
     steps:
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -28,14 +31,6 @@ jobs:
           minor_pattern: "feat:"
           format: "v${major}.${minor}.${patch}"
 
-      - name: Populate changelog
-        if: ${{ github.ref == 'refs/heads/main' }}
-        id: generate_notes
-        uses: anmarkoulis/commitizen-changelog-reader@master
-        with:
-          tag_name: ${{ steps.versioning.outputs.version }}
-          changelog: CHANGELOG.md
-
       - name: Create Release
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/create-release@v1
@@ -45,4 +40,12 @@ jobs:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
           body: ${{join(fromJson(steps.generate_notes.outputs.notes).notes, '')}}
+
+      - name: Populate changelog
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: generate_notes
+        uses: anmarkoulis/commitizen-changelog-reader@master
+        with:
+          tag_name: ${{ steps.versioning.outputs.version }}
+          changelog: CHANGELOG.md
 
