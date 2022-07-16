@@ -11,9 +11,10 @@ jobs:
   check_labels:
     name: Check labels
     runs-on: ubuntu-latest
-    if: ${{ !startsWith(github.ref, 'refs/tags/') }}
     steps:
-      - uses: docker://agilepathway/pull-request-label-checker:latest
+      - name: tyu
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: docker://agilepathway/pull-request-label-checker:latest
         with:
           one_of: major,minor,patch
           repo_token: ${{ secrets.GITHUB_TOKEN }}
