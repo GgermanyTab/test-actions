@@ -1,0 +1,17 @@
+name: autorealease
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check_pr_type:
+    name: Check PR type
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo label
+        run: |
+          echo $LABEL
+        env:
+          LABEL : ${{ github.event.issue.pull_request }}
