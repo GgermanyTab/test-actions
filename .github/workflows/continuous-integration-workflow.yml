@@ -27,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Semantic versioning
-        if: ${{ github.ref == 'refs/heads/main' }}
         id: versioning
         uses: PaulHatch/semantic-version@v4.0.2
         with:
@@ -38,12 +37,18 @@ jobs:
           format: "v${major}.${minor}.${patch}"
 
       - name: Create changelog text
-        if: ${{ github.ref == 'refs/heads/main' }}
         id: changelog
         uses: loopwerk/tag-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          config_file: .github/tag-changelog-config.js
+
+      - name: Update Changelog.md
+        uses: DamianReeves/write-file-action@master
+        with:
+          path: CHANGELOG.md
+          write-mode: append
+          contents: |
+            ${{ steps.changelog.outputs.changelog }}
 
       - name: Create Release
         uses: actions/create-release@v1
