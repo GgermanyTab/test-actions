@@ -54,7 +54,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.github_token }}
         with:
-          tag_name: ${{ steps.versioning.outputs.version }}
+          tag_name: 'vvv'
           release_name: ${{ steps.versioning.outputs.version }}
           body: ${{ steps.changelog.outputs.changes }}
 
