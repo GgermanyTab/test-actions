@@ -47,5 +47,5 @@ jobs:
         with:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
-          body: ${{ steps.create-release-notes.outputs.release-notes }}
+          body: ${{ steps.changelog.outputs.changes }}
 
