@@ -12,10 +12,28 @@ jobs:
     name: Check labels
     runs-on: ubuntu-latest
     steps:
-      - name: tyu
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: docker://agilepathway/pull-request-label-checker:latest
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          one_of: major,minor,patch
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Semantic versioning
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: versioning
+        uses: PaulHatch/semantic-version@v4.0.2
+        with:
+          branch: main
+          tag_prefix: "v"
+          major_pattern: "BREAKING CHANGE:"
+          minor_pattern: "feat:"
+          format: "v${major}.${minor}.${patch}"
+
+      - name: Create Release
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          tag_name: ${{ steps.versioning.outputs.version }}
+          release_name: ${{ steps.versioning.outputs.version }}
 
