@@ -1,16 +1,33 @@
-name: autorealease
-
+name: autorelease
 on:
   push:
     branches:
       - main
 
 jobs:
-  check_pr_type:
-    name: Check PR type
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - name: echo label
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Semantic versioning
+        id: versioning
+        uses: PaulHatch/semantic-version@v4.0.2
+        with:
+          branch: main
+          tag_prefix: "v"
+          major_pattern: "BREAKING CHANGE:"
+          minor_pattern: "feat:"
+          format: "v${major}.${minor}.${patch}-prerelease${increment}"
+
+      - name: Create Release
+        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        uses: actions/create-release@v1
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+        with:
+          tag_name: ${{ steps.versioning.outputs.version }}
+          release_name: ${{ steps.versioning.outputs.version }}
