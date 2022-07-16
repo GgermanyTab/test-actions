@@ -47,8 +47,7 @@ jobs:
         with:
           path: CHANGELOG.md
           write-mode: append
-          contents: |
-            ${{ steps.changelog.outputs.changelog }}
+          contents: ${{ steps.changelog.outputs.changelog }}
 
       - name: Create Release
         uses: actions/create-release@v1
