@@ -28,6 +28,14 @@ jobs:
           minor_pattern: "feat:"
           format: "v${major}.${minor}.${patch}"
 
+      - name: Populate changelog
+        if: ${{ github.ref == 'refs/heads/main' }}
+        id: generate_notes
+        uses: anmarkoulis/commitizen-changelog-reader@master
+        with:
+          tag_name: ${{ github.ref }}
+          changelog: CHANGELOG.md
+
       - name: Create Release
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/create-release@v1
@@ -36,4 +44,5 @@ jobs:
         with:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
+          body: ${{join(fromJson(steps.generate_notes.outputs.notes).notes, '')}}
 
