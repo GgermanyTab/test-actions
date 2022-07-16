@@ -33,7 +33,7 @@ jobs:
         id: generate_notes
         uses: anmarkoulis/commitizen-changelog-reader@master
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: ${{ steps.versioning.outputs.version }}
           changelog: CHANGELOG.md
 
       - name: Create Release
