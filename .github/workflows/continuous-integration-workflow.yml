@@ -50,13 +50,7 @@ jobs:
         uses: loopwerk/tag-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update Changelog.md
-        uses: DamianReeves/write-file-action@master
-        with:
-          path: CHANGELOG.md
-          write-mode: append
-          contents: 'test'
+          config_file: .github/tag-changelog-config.js
 
       - name: Create Release
         uses: actions/create-release@v1
