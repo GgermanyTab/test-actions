@@ -43,6 +43,7 @@ jobs:
         uses: loopwerk/tag-changelog@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_types: other,doc,chore
 
       - name: Create Release
         uses: actions/create-release@v1
