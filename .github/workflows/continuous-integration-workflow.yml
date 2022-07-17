@@ -55,7 +55,7 @@ jobs:
           skip-unshallow: 'true'
 
       - name: Create Changelog
-        id: changelog
+        id: changelogq
         uses: ./
         with:
           CONFIG_LOCATION: .github/changelog.yml
