@@ -24,6 +24,14 @@ jobs:
           exclude_types: other,doc,chore
           config_file: .github/changelog-config.js
 
+      - name: test
+        uses: BobAnkh/auto-generate-changelog@v1
+        with:
+          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PATH: 'CHANGELOG.md'
+          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
+          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
+
   auto_release:
     name: Automatic release
     needs: check_labels
