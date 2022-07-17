@@ -18,3 +18,4 @@ jobs:
           ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
           PATH: 'CHANGELOG.md'
           TYPE: 'none:none'
+          REGENERATE_COUNT: -1
