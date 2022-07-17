@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [v1.26.1](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.1) - 2022-07-17 16:01:59
+
+### 🎉 New Features
+- [[89fa7ed](https://github.com/GgermanyTab/test-actions/commit/89fa7ed010a8c08bdbaf5d2d07dff33a58bc1278)] est dj ([#56](https://github.com/GgermanyTab/test-actions/pull/56) by [GgermanyTab](https://github.com/GgermanyTab)) 
+ 
+
+### 📚 Documentation Changes
+- [[9bd91f9](https://github.com/GgermanyTab/test-actions/commit/9bd91f92bb5c1e055a186b3058492a0d4cff3e05)] update release notes 
+- [[d16b1c9](https://github.com/GgermanyTab/test-actions/commit/d16b1c9546da75aae860e3615e412ba20acf4869)] update release notes
+
 ## [v1.26.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.0) - 2022-07-17 15:38:02
 
 ### 🎉 New Features
