@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: test
-        uses: BobAnkh/auto-generate-changelog@master
+        uses: BobAnkh/auto-generate-changelog@v1.2.0
         with:
           ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
           PATH: 'CHANGELOG.md'
