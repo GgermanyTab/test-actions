@@ -19,7 +19,7 @@ module.exports = {
         let text = `\n## ${label}\n`;
 
         commits.forEach((commit) => {
-            text += `- ${commit.subject} by [${commit.author.login}](${commit.author.html_url})  [${commit.sha}](${commit.url}) \n`;
+            text += `- ${commit.subject} by [${commit.author.login}](${commit.author.html_url}) - [${commit.sha.substring(0, 7)}](${commit.url}) \n`;
         });
 
         return text;
@@ -27,6 +27,6 @@ module.exports = {
 
     renderChangelog: function (release, changes) {
         const now = new Date();
-        return `# ${release} - ${now.toISOString().substr(0, 10)}\n` + changes + "\n\n";
+        return `# ${release} - ${now.toISOString().substring(0, 10)} ${now.toISOString().substring(11, 16)}\n` + changes + "\n\n";
     },
 };
