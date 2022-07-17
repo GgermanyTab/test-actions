@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.17.1 - 2022-07-17
+
+### 📚 Documentation Changes
+
+- [[70e1bdb](https://github.com/GgermanyTab/test-actions/commit/70e1bdb10d8e1625650061c41f00120d25b96385)] update changelog
+
 ## v1.17.0 - 2022-07-17
 
 ### 🎉 New Features
