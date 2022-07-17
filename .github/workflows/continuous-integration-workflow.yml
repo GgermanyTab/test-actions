@@ -23,7 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_types: other,doc,chore
-          config_file: config.js
+          config_file: .github/config.js
 
   auto_release:
     name: Automatic release
