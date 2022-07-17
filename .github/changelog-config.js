@@ -1,9 +1,10 @@
 module.exports = {
     types: [
+        { types: ["BREAKING CHANGE"], label: "🚨 BREAKING CHANGES" },
         { types: ["feat", "feature"], label: "🎉 New Features" },
         { types: ["fix", "bugfix"], label: "🐛 Bugfixes" },
         { types: ["improvements", "enhancement"], label: "🔨 Improvements" },
-        { types: ["perf"], label: "🏎️ Performance Improvements" },
+        { types: ["perf"], label: "🚄 Performance Improvements" },
         { types: ["build", "ci"], label: "🏗️ Build System" },
         { types: ["refactor"], label: "🪚 Refactors" },
         { types: ["doc", "docs"], label: "📚 Documentation Changes" },

@@ -41,8 +41,8 @@ jobs:
         with:
           branch: main
           tag_prefix: "v"
-          major_pattern: "BREAKING CHANGE:"
-          minor_pattern: "feat:"
+          major_pattern: "BREAKING CHANGE("
+          minor_pattern: "feat("
           format: "v${major}.${minor}.${patch}"
 
       - name: Create Release
