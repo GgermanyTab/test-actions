@@ -16,5 +16,4 @@ jobs:
         with:
           ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
           PATH: 'CHANGELOG.md'
-          REGENERATE_COUNT: "${{ github.event.inputs.target }}"
           TYPE: 'none:none'
