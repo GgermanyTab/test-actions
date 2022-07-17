@@ -45,6 +45,26 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_types: other,doc,chore
 
+      - name: Find Last Tag
+        id: last
+        uses: jimschubert/query-tag-action@v1
+        with:
+          include: 'v*'
+          exclude: '*-rc*'
+          commit-ish: 'HEAD~'
+          skip-unshallow: 'true'
+
+      - name: Create Changelog
+        id: changelog
+        uses: ./
+        with:
+          CONFIG_LOCATION: .github/changelog.yml
+          FROM: ${{steps.last.outputs.tag}}
+          TO: ${{ steps.versioning.outputs.version }}
+          OUTPUT: .github/CHANGELOG.md
+      - name: View Changelog
+        run: cat .github/CHANGELOG.md
+
       - name: Create Release
         uses: actions/create-release@v1
         env:
@@ -52,5 +72,5 @@ jobs:
         with:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          body: ${{ steps.changelog.outputs.changes }}
 
