@@ -70,17 +70,11 @@ jobs:
           id: ${{ steps.release.outputs.id }}
           body: ${{ steps.changelog.outputs.changes }}
 
-      - name: Update CHANGELOG.md
-        uses: stefanzweifel/changelog-updater-action@v1
+      - uses: BobAnkh/auto-generate-changelog@v1.2.0
         with:
-          latest-version: ${{ steps.versioning.outputs.version }}
-          release-notes: ${{ steps.changelog.outputs.changes }}
-
-      - name: Commit updated CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          branch: 'main'
-          commit_message: Update CHANGELOG
-          file_pattern: CHANGELOG.md
+          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PATH: 'CHANGELOG.md'
+          REGENERATE_COUNT: 1
+          TYPE: 'none:none'
 
 
