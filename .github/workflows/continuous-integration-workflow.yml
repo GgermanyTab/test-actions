@@ -55,7 +55,7 @@ jobs:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
 
-      - name: Create changelog text
+      - name: Create release text
         id: changelog
         uses: loopwerk/tag-changelog@v1
         with:
@@ -70,14 +70,13 @@ jobs:
           id: ${{ steps.release.outputs.id }}
           body: ${{ steps.changelog.outputs.changes }}
 
-      - name: Update Changelog
+      - name: Update CHANGELOG.md
         uses: stefanzweifel/changelog-updater-action@v1
         with:
           latest-version: ${{ steps.versioning.outputs.version }}
           release-notes: ${{ steps.changelog.outputs.changes }}
 
-
-      - name: Commit updated CHANGELOG
+      - name: Commit updated CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: 'main'
