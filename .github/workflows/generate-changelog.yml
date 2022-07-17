@@ -1,6 +1,11 @@
 name: Generate changelog
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: 'choose number of changenote to regen'
+        default: '-1'
+        required: true
 
 jobs:
   generate-changelog:
