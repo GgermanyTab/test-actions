@@ -70,11 +70,4 @@ jobs:
           id: ${{ steps.release.outputs.id }}
           body: ${{ steps.changelog.outputs.changes }}
 
-      - uses: BobAnkh/auto-generate-changelog@v1.2.0
-        with:
-          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          PATH: 'CHANGELOG.md'
-          REGENERATE_COUNT: 1
-          TYPE: 'none:none'
-
 

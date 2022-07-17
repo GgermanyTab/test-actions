@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: 'choose number of changenote to regen'
+        description: 'choose number of changes note to regen'
         default: '-1'
         required: true
 
@@ -18,6 +18,6 @@ jobs:
         with:
           ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
           PATH: 'CHANGELOG.md'
-          REGENERATE_COUNT: -1
+          REGENERATE_COUNT: "${{ github.event.inputs.target }}"
           TYPE: 'none:none'
 
