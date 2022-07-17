@@ -12,6 +12,7 @@ module.exports = {
         { types: ["style"], label: "💅 Code Style Changes" },
         { types: ["chore"], label: "🧹 Chores" },
         { types: ["other"], label: "Other Changes" },
+
     ],
 
     excludeTypes: ["other"],
