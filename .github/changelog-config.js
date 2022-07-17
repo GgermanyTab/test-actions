@@ -19,7 +19,7 @@ module.exports = {
         let text = `\n## ${label}\n`;
 
         commits.forEach((commit) => {
-            text += `- ${commit}\n`;
+            text += `- ${commit.subject} by ${commit.author}  ${commit.url}\n`;
         });
 
         return text;
