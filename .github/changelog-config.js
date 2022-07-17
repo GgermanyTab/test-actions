@@ -16,12 +16,13 @@ module.exports = {
     excludeTypes: ["other"],
 
     renderTypeSection: function (label, commits) {
-        let text = `\n## ${label}\n`;
+        let text = `\n### ${label}\n`;
 
         commits.forEach((commit) => {
             text += `- [[${commit.sha.substring(0, 7)}](${commit.url})] ${commit.subject} \n`;
         });
 
+        text += ` \n`
         return text;
     },
 
