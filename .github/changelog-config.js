@@ -1,10 +1,9 @@
 module.exports = {
     types: [
-        { types: ["BREAKING CHANGE"], label: "🚨 BREAKING CHANGES" },
         { types: ["feat", "feature"], label: "🎉 New Features" },
         { types: ["fix", "bugfix"], label: "🐛 Bugfixes" },
         { types: ["improvements", "enhancement"], label: "🔨 Improvements" },
-        { types: ["perf"], label: "🚄 Performance Improvements" },
+        { types: ["perf"], label: "🏎️ Performance Improvements" },
         { types: ["build", "ci"], label: "🏗️ Build System" },
         { types: ["refactor"], label: "🪚 Refactors" },
         { types: ["doc", "docs"], label: "📚 Documentation Changes" },
@@ -12,7 +11,6 @@ module.exports = {
         { types: ["style"], label: "💅 Code Style Changes" },
         { types: ["chore"], label: "🧹 Chores" },
         { types: ["other"], label: "Other Changes" },
-
     ],
 
     excludeTypes: ["other"],
@@ -21,7 +19,7 @@ module.exports = {
         let text = `\n## ${label}\n`;
 
         commits.forEach((commit) => {
-            text += `- [${commit.sha.substring(0, 7)}](${commit.url}) ${commit.subject} by [${commit.author.login}](${commit.author.html_url}) \n`;
+            text += `- [`${commit.sha.substring(0, 7)}`](${commit.url}) ${commit.subject} by [${commit.author.login}](${commit.author.html_url}) \n`;
         });
 
         return text;
