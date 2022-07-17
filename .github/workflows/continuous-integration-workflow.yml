@@ -17,14 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create changelog text
-        id: changelog
-        uses: loopwerk/tag-changelog@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          exclude_types: other,doc,chore
-          config_file: .github/changelog-config.js
-
   auto_release:
     name: Automatic release
     needs: check_labels
@@ -46,14 +38,6 @@ jobs:
           minor_pattern: "feat:"
           format: "v${major}.${minor}.${patch}"
 
-      - name: Create changelog text
-        id: changelog
-        uses: loopwerk/tag-changelog@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          exclude_types: other,doc,chore
-          config_file: config.js
-
       - name: Create Release
         uses: actions/create-release@v1
         env:
@@ -61,5 +45,20 @@ jobs:
         with:
           tag_name: ${{ steps.versioning.outputs.version }}
           release_name: ${{ steps.versioning.outputs.version }}
+
+      - name: Create changelog text
+        id: changelog
+        uses: loopwerk/tag-changelog@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_types: other,doc,chore
+          config_file: .github/changelog-config.js
+
+      - name: Update release text
+        id: update_release
+        uses: tubone24/update_release@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
           body: ${{ steps.changelog.outputs.changes }}
 
