@@ -56,19 +56,6 @@
 ### 📚 Documentation Changes
 - [[c9dcd44](https://github.com/GgermanyTab/test-actions/commit/c9dcd44987e3e7977db0ef5adda0277ef2b3bc77)] update release notes
 
-## [v1.22.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.22.0) - 2022-07-17 14:00:20
-
-### 🎉 New Features
-- [[9110ea5](https://github.com/GgermanyTab/test-actions/commit/9110ea58def9d036db07cad664d07264523be49c)] fff ([#51](https://github.com/GgermanyTab/test-actions/pull/51) by [GgermanyTab](https://github.com/GgermanyTab)) 
- 
-
-### 📚 Documentation Changes
-- [[33cacd9](https://github.com/GgermanyTab/test-actions/commit/33cacd99fbdf1c6de760f00934611b141912d39b)] update release notes
-
-## [v1.21.1](https://github.com/GgermanyTab/test-actions/releases/tag/v1.21.1) - 2022-07-17 13:54:34
-
-*No description*
-
 ## [v1.21.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.21.0) - 2022-07-17 13:49:22
 
 ### 🎉 New Features
