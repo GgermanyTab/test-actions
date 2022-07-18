@@ -20,5 +20,8 @@ jobs:
           PATH: 'CHANGELOG.md'
           REGENERATE_COUNT: "${{ github.event.inputs.target }}"
           TYPE: 'none:none'
+          BRANCH: 'main'
+          PULL_REQUEST: 'main'
+
 
 
