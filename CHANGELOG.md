@@ -1,6 +1,56 @@
 # CHANGELOG
 
+## [v1.26.3](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.3) - 2022-07-18 12:33:17
 
+### 📚 Documentation Changes
+- [[af61bd2](https://github.com/GgermanyTab/test-actions/commit/af61bd2646497416f6b98050dd7f178c2e001ddb)] update release notes
+
+## [v1.26.2](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.2) - 2022-07-18 11:56:32
+
+### 📚 Documentation Changes
+- [[ebf0b66](https://github.com/GgermanyTab/test-actions/commit/ebf0b66c81497245292c29bbebc624d60bc7ad75)] update release notes
+
+## [v1.26.1](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.1) - 2022-07-17 16:01:59
+
+### 🎉 New Features
+- [[89fa7ed](https://github.com/GgermanyTab/test-actions/commit/89fa7ed010a8c08bdbaf5d2d07dff33a58bc1278)] est dj ([#56](https://github.com/GgermanyTab/test-actions/pull/56) by [GgermanyTab](https://github.com/GgermanyTab)) 
+ 
+
+### 📚 Documentation Changes
+- [[9bd91f9](https://github.com/GgermanyTab/test-actions/commit/9bd91f92bb5c1e055a186b3058492a0d4cff3e05)] update release notes 
+- [[d16b1c9](https://github.com/GgermanyTab/test-actions/commit/d16b1c9546da75aae860e3615e412ba20acf4869)] update release notes
+
+## [v1.26.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.0) - 2022-07-17 15:38:02
+
+### 🎉 New Features
+- [[2765255](https://github.com/GgermanyTab/test-actions/commit/2765255cc8c108187aebd6f77230f79291280a3d)] dfdss ([#55](https://github.com/GgermanyTab/test-actions/pull/55) by [GgermanyTab](https://github.com/GgermanyTab)) 
+ 
+
+### 📚 Documentation Changes
+- [[1e90000](https://github.com/GgermanyTab/test-actions/commit/1e900006a8432ea82bf9128078a2d7776870a5a3)] update release notes
+
+## [v1.25.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.25.0) - 2022-07-17 15:19:02
+
+### 🎉 New Features
+- [[d84fc5b](https://github.com/GgermanyTab/test-actions/commit/d84fc5b2d45763f19c3be334580ba230efae046c)] cvcvv ([#54](https://github.com/GgermanyTab/test-actions/pull/54) by [GgermanyTab](https://github.com/GgermanyTab)) 
+ 
+
+### 📚 Documentation Changes
+- [[4b4f8ad](https://github.com/GgermanyTab/test-actions/commit/4b4f8ad0a92612ded0e99e285123a72ab2ab65e7)] update release notes
+
+## [v1.24.1](https://github.com/GgermanyTab/test-actions/releases/tag/v1.24.1) - 2022-07-17 15:10:18
+
+*No description*
+
+## [v1.24.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.24.0) - 2022-07-17 15:06:17
+
+### 🎉 New Features
+- [[14a6195](https://github.com/GgermanyTab/test-actions/commit/14a61959a89864f4f2a1c5881def96e38590289f)] automatic change ([#53](https://github.com/GgermanyTab/test-actions/pull/53) by [GgermanyTab](https://github.com/GgermanyTab))
+
+## [v1.23.0](https://github.com/GgermanyTab/test-actions/releases/tag/v1.23.0) - 2022-07-17 14:58:59
+
+### 🎉 New Features
+- [[c14815f](https://github.com/GgermanyTab/test-actions/commit/c14815fd98eb9154dc73acf07642fd462d6b26e4)] sss ([#52](https://github.com/GgermanyTab/test-actions/pull/52) by [GgermanyTab](https://github.com/GgermanyTab)) 
  
 
 ### 📚 Documentation Changes
