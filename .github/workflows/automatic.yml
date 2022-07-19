@@ -19,3 +19,5 @@ jobs:
           PATH: 'CHANGELOG.md'
           TYPE: 'none:none'
           REGENERATE_COUNT: -1
+          BRANCH: 'documentation'
+          PULL_REQUEST: 'main'
