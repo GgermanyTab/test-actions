@@ -31,3 +31,5 @@ module.exports = {
         return `# ${release} - ${now.toISOString().substring(0, 10)} ${now.toISOString().substring(11, 16)}\n` + changes + "\n\n";
     },
 };
+
+
