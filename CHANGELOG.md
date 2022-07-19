@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## [v1.26.4](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.4) - 2022-07-19 19:01:40
+
+### 🐛 Bugfixes
+- [[845c779](https://github.com/GgermanyTab/test-actions/commit/845c77903ae48bfaa33bdc88da3d922548ffe8c4)] update chang 
+ 
+
+### 📚 Documentation Changes
+- [[1bb1287](https://github.com/GgermanyTab/test-actions/commit/1bb1287f360a499d8e91a936176a62fe572cd993)] update release notes 
+- [[3169847](https://github.com/GgermanyTab/test-actions/commit/3169847423463a77d17437567bb1ce72d2d9e132)] update release notes
+
 ## [v1.26.3](https://github.com/GgermanyTab/test-actions/releases/tag/v1.26.3) - 2022-07-18 12:33:17
 
 ### 📚 Documentation Changes
